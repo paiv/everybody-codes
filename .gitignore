@@ -1,2 +1,6 @@
-.venv/
-*.txt
+*
+!*/
+!*.jl
+!*.py
+!*.svg
+!readme.md
