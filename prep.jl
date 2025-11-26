@@ -9,7 +9,7 @@ import URIs: URI, absuri
 
 
 const _BaseUrl = "https://everybody.codes"
-const _BaseCdn = "https://everybody-codes.b-cdn.net"
+#const _BaseCdn = "https://everybody-codes.b-cdn.net"
 const _DefaultEvent = "event/$(year(today()))"
 
 
@@ -29,7 +29,8 @@ function apigetjson(api::ApiSession, url::URI)
     println(stderr, url)
     io = IOBuffer()
     r = Downloads.request(string(url), output=io, headers=api.headers,
-        throw=false, downloader=api.wpool, verbose=false)
+        throw=false, timeout=10, downloader=api.wpool, verbose=false)
+    !hasfield(typeof(r), :status) && error(r)
     r.status >= 300 && error(r)
     JSON.parse(String(take!(io)))
 end
@@ -66,7 +67,8 @@ function apigetfile(api::ApiSession, fn::AbstractString, url::URI)
     println(stderr, url)
     h = filter(!=("Cookie")∘first, api.headers)
     r = Downloads.request(string(url), output=fn, headers=h,
-        throw=false, downloader=api.cpool, verbose=false)
+        throw=false, timeout=10, downloader=api.cpool, verbose=false)
+    !hasfield(typeof(r), :status) && error(r)
     r.status >= 300 && error(r)
     setfiledatefromheaders(r.headers, fn)
     return r
@@ -82,7 +84,7 @@ end
 
 function cdnget(api::ApiSession, fn::AbstractString, url::AbstractString)
     ts = @sprintf "%.3f" time()
-    url = absuri("$url?t=$ts", _BaseCdn)
+    url = absuri("$url?t=$ts", _BaseUrl)
     apigetfile(api, fn, url)
 end
 
@@ -95,6 +97,9 @@ end
 
 cdn_getnotes(api::ApiSession, fn::AbstractString, event::AbstractString, quest::AbstractString) =
     cdnget(api, fn, "/assets/$event/$quest/input/$(api.seed).json")
+
+cdn_getinfo(api::ApiSession, fn::AbstractString, event::AbstractString, quest::AbstractString) =
+    cdnget(api, fn, "/assets/$event/$quest/description.json")
 
 
 function readenv()
@@ -159,6 +164,18 @@ end
 function dbgetpartfilename(db, pid)
     qid = lpad(db.quest, 2, '0')
     joinpath(db.path, "q$(qid)_p$(pid).txt")
+end
+
+
+function dbgetinfofilename(db)
+    qid = lpad(db.quest, 2, '0')
+    joinpath(db.path, "q$(qid)_info.in")
+end
+
+
+function dbgetpartinfofilename(db, pid)
+    qid = lpad(db.quest, 2, '0')
+    joinpath(db.path, "q$(qid)_p$(pid).html")
 end
 
 
@@ -253,20 +270,38 @@ function main()
     end && return
 
     infn = dbgetinputfilename(db)
+    infofn = dbgetinfofilename(db)
     if !isfile(infn)
         cdn_getnotes(api, infn, db.eventid, db.quest)
     end
-    inobj = JSON.parsefile(infn)
-    for (pid, cc) in inobj
-        fn = dbgetpartfilename(db, pid)
-        if !isfile(fn)
-            s = trydecryptinput(api, db, pid, cc)
-            isnothing(s) && return
-            write(fn, s)
-            println(stderr, fn)
-        end
-        println(stderr, "$(basename(fn)) ok")
+    if !isfile(infofn)
+        cdn_getinfo(api, infofn, db.eventid, db.quest)
     end
+    function process(ff, ifn, xid=typemax(Int))
+        obj = JSON.parsefile(ifn)
+        lastpid = 0
+        for (p, cc) in obj
+            pid = tryparse(Int, p)
+            if isnothing(pid)
+                s = trydecryptinput(api, db, 1, cc)
+                !isnothing(s) && println(stderr, String(s))
+                continue
+            end
+            pid > xid && continue
+            fn = ff(db, pid)
+            if !isfile(fn)
+                s = trydecryptinput(api, db, pid, cc)
+                isnothing(s) && return lastpid
+                lastpid = pid
+                write(fn, s)
+                println(stderr, fn)
+            end
+            println(stderr, "$(basename(fn)) ok")
+        end
+        return lastpid
+    end
+    i = process(dbgetpartfilename, infn)
+    process(dbgetpartinfofilename, infofn, i)
 end
 
 main()
