@@ -6,7 +6,7 @@ import TOML
 import URIs: URI, absuri
 
 
-const _BaseUrl = "https://everybody.codes"
+const _BaseUrl = "https://api.everybody.codes"
 const _DefaultEvent = "event/$(year(today()))"
 
 
@@ -44,7 +44,7 @@ end
 function api_answer(api::ApiSession, event::AbstractString, quest::AbstractString,
     part::Int, ans)
     obj = Dict("answer"=>string(ans))
-    apipost(api, "/api/event/$event/quest/$quest/part/$part/answer", obj)
+    apipost(api, "/event/$event/quest/$quest/part/$part/answer", obj)
 end
 
 

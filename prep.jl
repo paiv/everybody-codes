@@ -8,8 +8,8 @@ import TOML
 import URIs: URI, absuri
 
 
-const _BaseUrl = "https://everybody.codes"
-#const _BaseCdn = "https://everybody-codes.b-cdn.net"
+const _BaseUrl = "https://api.everybody.codes"
+const _BaseCdn = "https://everybody.codes"
 const _DefaultEvent = "event/$(year(today()))"
 
 
@@ -84,15 +84,15 @@ end
 
 function cdnget(api::ApiSession, fn::AbstractString, url::AbstractString)
     ts = @sprintf "%.3f" time()
-    url = absuri("$url?t=$ts", _BaseUrl)
+    url = absuri("$url?t=$ts", _BaseCdn)
     apigetfile(api, fn, url)
 end
 
 
-api_me(api::ApiSession) = apiget(api, "/api/user/me")
+api_me(api::ApiSession) = apiget(api, "/user/me")
 
 function api_questkeys(api::ApiSession, event::AbstractString, quest::AbstractString)
-    apiget(api, "/api/event/$event/quest/$quest")
+    apiget(api, "/event/$event/quest/$quest")
 end
 
 cdn_getnotes(api::ApiSession, fn::AbstractString, event::AbstractString, quest::AbstractString) =
