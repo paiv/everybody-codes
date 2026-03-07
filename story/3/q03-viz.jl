@@ -16,29 +16,14 @@ const _ArrowHead = Dict(
 
 const _Palette = Dict(
     "BLACK"=>"silver",
-    "GREEN"=>"green",
-    "MAGENTA"=>"magenta",
-    "WHITE"=>"white",
-    "CYAN"=>"cyan",
-    "RED"=>"red",
-    "BLUE"=>"blue",
-    "YELLOW"=>"yellow",
     )
 
 
-function fcolor(c)
-    _Palette[c]
-end
+fcolor(p) = get(_Palette, p.color, lowercase(p.color))
 
+farrow(p) = _ArrowHead[p.shape]
 
-function farrow(p)
-    _ArrowHead[p.shape]
-end
-
-
-function viznode(n)
-    "$(n.id)"
-end
+viznode(n) = string(n.id)
 
 
 function vizedge(p, f, n)
@@ -47,8 +32,8 @@ function vizedge(p, f, n)
     s = weak ? "dashed" : "solid"
     h = farrow(n.meta.plug)
     t = farrow(d)
-    u = fcolor(n.meta.plug.color)
-    v = fcolor(d.color)
+    u = fcolor(n.meta.plug)
+    v = fcolor(d)
     l = f=="l" ? "nw" : "ne"
     """$(p.id):$l -> $(n.id):s [style=$s, arrowhead=$h, arrowtail=$t, color="$u:none;0.01:$v"]"""
 end
