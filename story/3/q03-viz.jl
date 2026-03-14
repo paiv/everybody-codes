@@ -65,22 +65,50 @@ end
 
 
 function melody(node)
+    v = map(s->s.data, collect(node))
+    join(v, '\n')
+end
+
+
+function strudel1(node)
     notes = ["$n$i" for i=3:5 for n='a':'g']
     m = mapreduce(*, collect(node)) do s
-        cs = collect(s.data)
-        ix = findall(!=('-'), cs)
-        isempty(ix) && return "~ "
-        all(isdigit, cs[ix]) || return "~ "
-        ps = notes[ix]
-        q = join(ps, ',')
-        # ts = cs[ix] .- '0'
-        # ns = map(zip(ps,ts)) do (p,t)
-        #     "[$p@$t ~@$(4-t)]"
-        # end
-        # q = join(ns, ',')
-        "[$q] "
+        ix = findall(!=('-'), s.data)
+        if isempty(ix)
+            "~"
+        elseif length(ix) == 1
+            notes[ix] |> only
+        else
+            q = join(notes[ix], ',')
+            "[$q]"
+        end * ' '
     end
-    """\$: note("<$m ~ ~ ~>*8").sound("gm_blown_bottle")"""
+    """setcpm(110*3); note("<$m~ ~ ~>").sound("gm_xylophone")\n"""
+end
+
+
+function strudel(node, qs='1':'3')
+    notes = ["$n$i" for i=3:5 for n='a':'g']
+    gain = Dict('1'=>0.3, '2'=>0.5, '3'=>1.0)
+    ns = collect(node)
+    function vol(u)
+        any(s->u∈s.data, ns) || return ""
+        g = gain[u]
+        m = mapreduce(*, ns) do s
+            ix = findall(==(u), s.data)
+            if isempty(ix)
+                "~"
+            elseif length(ix) == 1
+                notes[ix] |> only
+            else
+                q = join(notes[ix], ',')
+                "[$q]"
+            end * ' '
+        end
+        """\$: note("<$m~ ~ ~>").sound("gm_xylophone").postgain($g)\n"""
+    end
+    s = join(map(vol, qs))
+    "setcpm(110*3);\n$s"
 end
 
 
@@ -89,6 +117,7 @@ function parseargs(args)
     filename = "-"
     part = 3
     melody = false
+    strudel = false
     state = :ParseArg
     for arg in args
         if state == :ParseArg
@@ -97,8 +126,16 @@ function parseargs(args)
                     needs_help = true
                 elseif arg == "-p" || arg == "--part"
                     state = :ParsePart
+                elseif arg == "-p1"
+                    part = 1
+                elseif arg == "-p2"
+                    part = 2
+                elseif arg == "-p3"
+                    part = 3
                 elseif arg == "-m" || arg == "--melody"
                     melody = true
+                elseif arg == "-s" || arg == "--strudel"
+                    strudel = true
                 elseif arg == "-"
                     filename = arg
                 else
@@ -114,14 +151,16 @@ function parseargs(args)
         end
     end
     state != :ParseArg && (needs_help = true)
-    return (; needs_help, filename, part, melody)
+    viz = !(melody || strudel)
+    return (; needs_help, filename, part, viz, melody, strudel)
 end
 
 
 const _help_page = """
-usage: viz.jl [-h] [-p PART] [-m] FILE
+usage: viz.jl [-h] [-p PART] [-m] [-s] FILE
 options:
   -m,--melody   print the melody
+  -s,--strudel  print the melody
   -p,--part     select the algorithm
   -h            print this help
 """
@@ -150,12 +189,11 @@ function @main(args)
         f = buildtree3
     end
 
-    p = opts.melody ? melody : viz
-
     ns = parsenotes(data)
     root = f(ns)
-    s = p(root)
-    println(s)
+    opts.melody && melody(root) |> println
+    opts.strudel && strudel(root) |> println
+    opts.viz && viz(root) |> println
 
     return 0
 end
