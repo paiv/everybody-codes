@@ -1,0 +1,38 @@
+1,1 0,0
+
+test: QUACK
+expect: quack
+
+test:
+QUACK
+QUACK
+QUACK
+
+expect:
+quack
+quack
+quack
+
+
+test:
+KUKKKAAAQUAAKAKCUQQAQQUAU
+CUQAKKCQQCQCCAKAUQUAQAACA
+KCCKCAAKQUUQQKAQQKCAAUUKA
+UKKQKUKUCCUCUAQCUQAQKQQAQ
+CQKCUAQCAKAACACAQKUAQKCKC
+
+expect:
+kukkkaaaquaakakcuqqaqquau
+cuqakkcqqcqccakauquaqaaca
+kcckcaakquuqqkaqqkcaauuka
+ukkqkukuccucuaqcuqaqkqqaq
+cqkcuaqcakaacacaqkuaqkckc
+
+
+test:
+KUCKUCUUUA
+QQKQKCAUCC
+
+expect:
+kuckucuuua
+qqkqkcaucc
