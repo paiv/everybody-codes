@@ -95,8 +95,13 @@ function api_questkeys(api::ApiSession, event::AbstractString, quest::AbstractSt
     apiget(api, "/event/$event/quest/$quest")
 end
 
-cdn_getnotes(api::ApiSession, fn::AbstractString, event::AbstractString, quest::AbstractString) =
-    cdnget(api, fn, "/assets/$event/$quest/input/$(api.seed).json")
+function cdn_getnotes(api::ApiSession, fn::AbstractString, event::AbstractString, quest::AbstractString; shared::Bool=false)
+    if shared
+        cdnget(api, fn, "/assets/$event/$quest/input.json")
+    else
+        cdnget(api, fn, "/assets/$event/$quest/input/$(api.seed).json")
+    end
+end
 
 cdn_getinfo(api::ApiSession, fn::AbstractString, event::AbstractString, quest::AbstractString) =
     cdnget(api, fn, "/assets/$event/$quest/description.json")
@@ -131,13 +136,16 @@ end
 
 mutable struct DbEvent
     event::String
-    eventid::SubString
+    eventid::String
     quest::String
     path::String
+    sharednotes::Bool
     function DbEvent(event, quest)
-        _, eid = split(event, '/')
+        s, eid = split(event, '/')
+        s∉["event","story"] && (eid = '3'*lpad(eid,3,'0'))
+        share = s∈["gridos"]
         path = joinpath(dirname(@__FILE__), event)
-        new(event, eid, quest, path)
+        new(event, eid, quest, path, share)
     end
 end
 
@@ -272,7 +280,7 @@ function main()
     infn = dbgetinputfilename(db)
     infofn = dbgetinfofilename(db)
     if !isfile(infn)
-        cdn_getnotes(api, infn, db.eventid, db.quest)
+        cdn_getnotes(api, infn, db.eventid, db.quest, shared=db.sharednotes)
     end
     if !isfile(infofn)
         cdn_getinfo(api, infofn, db.eventid, db.quest)
