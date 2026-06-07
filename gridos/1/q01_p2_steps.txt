@@ -1,0 +1,26 @@
+HEADS AAAAABBBBB
+
+START ********** S1 ********** SUDUDUDUDS
+   S1 ********** M  ********** SSSUDUDSSS
+
+M _********_ STOP ********** SSSSSSSSSS
+M P********_ STOP ********** SSSSSSSSSS
+M _********P STOP ********** SSSSSSSSSS
+M P********P STOP ********** SSSSSSSSSS
+
+M A________A M _********_ RRRRRLLLLL
+M A________B M _********P RRRRRLLLLL
+M A________C M _******PPP RRRRRLLLLL
+M A________D M _****PPPPP RRRRRLLLLL
+M B________A M P********_ RRRRRLLLLL
+M B________B M P********P RRRRRLLLLL
+M B________C M P******PPP RRRRRLLLLL
+M B________D M P****PPPPP RRRRRLLLLL
+M C________A M PPP******_ RRRRRLLLLL
+M C________B M PPP******P RRRRRLLLLL
+M C________C M PPP****PPP RRRRRLLLLL
+M C________D M PPP**PPPPP RRRRRLLLLL
+M D________A M PPPPP****_ RRRRRLLLLL
+M D________B M PPPPP****P RRRRRLLLLL
+M D________C M PPPPP**PPP RRRRRLLLLL
+M D________D M PPPPPPPPPP RRRRRLLLLL

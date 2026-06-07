@@ -1,0 +1,82 @@
+HEADS AACC
+
+START **** M **** SRLS
+
+M _**_ STOP **** SSSS
+M A_@A STOP _**_ SSSS
+M A@_A STOP _**_ SSSS
+M B_@B STOP _**_ SSSS
+M B@_B STOP _**_ SSSS
+M @__@ STOP ***_ SSSS
+M @_@@ STOP ***_ SSSS
+M @@_@ STOP ***_ SSSS
+M @@@@ STOP ***_ SSSS
+
+N ____ STOP **** SSSS
+N ___@ STOP **** SSSS
+N _@@_ STOP **_* SSSS
+N _@@@ STOP **_* SSSS
+N @___ STOP **** SSSS
+N @__@ STOP **** SSSS
+N @@@_ STOP **_* SSSS
+N @@@@ STOP **_* SSSS
+
+M A__A D _**_ DDUU
+M A__B D _**_ DDUU
+M B__A D _**_ DDUU
+M B__B D _**_ DDUU
+D A__A N **** LLRR
+D A__B N **** LLRR
+D B__A N **** LLRR
+D B__B N **** LLRR
+N _AA_ U *__* DDUU
+N _AB_ U *__* DDUU
+N _BA_ U *__* DDUU
+N _BB_ U *__* DDUU
+U _AA_ M **** RRLL
+U _AB_ M **** RRLL
+U _BA_ M **** RRLL
+U _BB_ M **** RRLL
+
+D ____ STOP **** SSSS
+D @___ STOP **** SSSS
+D ___@ STOP **** SSSS
+D @__@ STOP **** SSSS
+U ____ STOP **** SSSS
+U _@__ STOP **** SSSS
+U __@_ STOP **** SSSS
+U _@@_ STOP **** SSSS
+
+M AAAA M @**@ RRLL
+M AAAB M @**_ RRLL
+M AABA M @**_ RRLL
+M AABB M @**@ RRLL
+M ABAA M _**@ RRLL
+M ABAB M _**_ RRLL
+M ABBA M _**_ RRLL
+M ABBB M _**@ RRLL
+M BAAA M _**@ RRLL
+M BAAB M _**_ RRLL
+M BABA M _**_ RRLL
+M BABB M _**@ RRLL
+M BBAA M @**@ RRLL
+M BBAB M @**_ RRLL
+M BBBA M @**_ RRLL
+M BBBB M @**@ RRLL
+
+N AAAA N *@@* LLRR
+N AAAB N *@_* LLRR
+N AABA N *@_* LLRR
+N AABB N *@@* LLRR
+N ABAA N *_@* LLRR
+N ABAB N *__* LLRR
+N ABBA N *__* LLRR
+N ABBB N *_@* LLRR
+N BAAA N *_@* LLRR
+N BAAB N *__* LLRR
+N BABA N *__* LLRR
+N BABB N *_@* LLRR
+N BBAA N *@@* LLRR
+N BBAB N *@_* LLRR
+N BBBA N *@_* LLRR
+N BBBB N *@@* LLRR

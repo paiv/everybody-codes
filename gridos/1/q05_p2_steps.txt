@@ -1,0 +1,52 @@
+HEADS AAABBB
+START ...... S1 ****** SDDLLS
+S1 ...... II ****** SSDLSS
+
+II ...... JJ +**+++ RRRDDD
+JJ .@..@. TR +**+*+ RRRDDD
+JJ .@.@@. TR +****+ RRRDDD
+
+TL ...... BR ++++++ RRRDDD
+TL .@.... TR +**+++ RRRDDD
+TL ....@. BL ++++** RRRDDD
+TL .@..@. TL +**+** RRRDDD
+TR ...... BL ++++++ RRRDDD
+TR .@.... TL +**+++ RRRDDD
+TR ....@. BR +++**+ RRRDDD
+TR .@..@. TR +****+ RRRDDD
+BL ...... TR ++++++ RRRDDD
+BL .@.... BR **++++ RRRDDD
+BL ....@. TL ++++** RRRDDD
+BL .@..@. BL **++** RRRDDD
+BR ...... TL ++++++ RRRDDD
+BR .@.... BL **++++ RRRDDD
+BR ....@. TR +++**+ RRRDDD
+BR .@..@. BR **+**+ RRRDDD
+
+TR +**... EL ***+++ SSSDDD
+TR +**.@. ER *****+ SSSDDD
+TL +**... ER ***+++ SSSDDD
+TL +**.@. EL ***+** SSSDDD
+
+BL ...___ TE +++*** RRRSSS
+BL .@.___ BE **+*** RRRSSS
+TL ...___ BE +++*** RRRSSS
+TL .@.___ TE +***** RRRSSS
+TE ...___ BE +++*** RRRSSS
+TE .@.___ TE +***** RRRSSS
+BE ...___ TE +++*** RRRSSS
+BE .@.___ BE **+*** RRRSSS
+
+BR +**... ER ***+++ SSSDDD
+BR +**.@. ER *****+ SSSDDD
+BL +**... ER ***+++ SSSDDD
+BL +**.@. EL ***+** SSSDDD
+EL +**... ER ***+++ SSSDDD
+EL +**.@. EL ***+** SSSDDD
+ER +**... EL ***+++ SSSDDD
+ER +**.@. ER *****+ SSSDDD
+
+TL +**___ STOP ****** SSSSSS
+TE +**___ STOP ****** SSSSSS
+BE +**___ STOP ****** SSSSSS
+EL +**___ STOP ****** SSSSSS

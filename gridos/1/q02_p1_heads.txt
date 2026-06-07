@@ -1,0 +1,11 @@
+HEADS A
+
+START A A _ R
+START B B _ R
+
+A _ STOP _ S
+B _ STOP _ S
+A A A @ R
+A B B _ R
+B A A _ R
+B B B @ R

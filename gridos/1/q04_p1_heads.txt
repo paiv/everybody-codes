@@ -1,0 +1,13 @@
+HEADS A
+
+START # S * R
+START _ STOP * S
+
+F = F * L
+F # START * D
+
+S = S * R
+S | T _ L
+T = F | L
+T # X * R
+X _ F | L

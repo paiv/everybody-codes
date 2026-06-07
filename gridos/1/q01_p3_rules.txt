@@ -1,0 +1,17 @@
+HEADS AAAABBBB
+
+START ******** S2 ******** SDUDRRUD
+S2 ******** S3 ******** SSSDRRUD
+S3 ******** M  ******** SSSSSDSD
+
+M ________ STOP ******** SSSSSSSS
+M A*______ T _******* SSSSSSSS
+M B*______ T P******* SSSSSSSS
+M C*______ T P*PP**** SSSSSSSS
+M D*______ T P*PP**PP SSSSRRRR
+T *_**____ M ******** RRRRRRRR
+T *A**____ M *P*****P RRRRRRRR
+T *B**____ M *P****PP RRRRRRRR
+T *C**____ M *P**PPPP RRRRRRRR
+T *D**____ V *P**PPPP SSSSRRRR
+V *P**____ M ******PP RRRRRRRR

@@ -1,0 +1,27 @@
+HEADS A
+
+START # SD * R
+
+SD _ TU * R
+TU _ SU * U
+SD = SD * D
+SD | DX * D
+SU = SU * U
+SU | DX * D
+SU _ TD * R
+TD _ SD * D
+
+DX = DX | D
+DX | DX * D
+DX _ UX * U
+UX | UX * U
+UX = UX | U
+UX _ EE * D
+
+EE | EF * R
+EF _ ET * L
+EF = EF _ R
+EF | ET _ L
+ET _ ET * L
+ET | EE * D
+EE _ STOP * S

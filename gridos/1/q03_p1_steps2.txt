@@ -1,0 +1,15 @@
+HEADS AA
+
+START ## M ** SD
+
+M #_ M ** RR
+M =_ V ~* RR
+M __ STOP ** SS
+
+V #_ M ** RR
+V =_ W ~~ RR
+
+W #_ B ** LL
+W =_ W ~~ RR
+
+B ~~ M ~_ RR

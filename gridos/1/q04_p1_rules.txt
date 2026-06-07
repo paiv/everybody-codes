@@ -1,0 +1,8 @@
+HEADS AAA
+
+START ### S *** SRR
+S #** M *** SSR
+
+M #=* M _#* DDD
+M #|_ M _#| DDD
+M ___ STOP *** SSS

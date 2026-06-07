@@ -1,0 +1,31 @@
+HEADS A
+START . TR + R
+
+TR . TQ + D
+TQ . RB + D
+TQ @ RT * U
+RT . TR + R
+RT + TR * R
+
+BR . BQ + U
+BQ . RT + U
+BQ @ RB * D
+RB . BR + R
+RB + BR * R
+
+BR _ ER * L
+ER + EQ * L
+
+ER . EQ + L
+EQ . RS + L
+EQ @ RE * R
+RE . ER + D
+RE + ER * D
+
+SR . SQ + R
+SQ . RE + R
+SQ @ RS * L
+RS . SR + D
+RS + SR * D
+
+SR _ STOP * S

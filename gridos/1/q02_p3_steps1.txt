@@ -1,0 +1,59 @@
+HEADS AAAB
+
+START **** R **** SRDR
+
+R A__* STOP _*** SSSS
+R B__* STOP _*** SSSS
+
+R A_A* RL @*** DDDD
+R A_B* RL _*** DDDD
+R B_A* RL _*** DDDD
+R B_B* RL @*** DDDD
+R A@A* RL @*** DDDD
+R A@B* RL _*** DDDD
+R B@A* RL _*** DDDD
+R B@B* RL @*** DDDD
+
+RL !_** L **** SSRS
+
+R _!_* R **** RRRR
+R AA__ R @*** RRRR
+R AB__ R _*** RRRR
+R BA__ R _*** RRRR
+R BB__ R @*** RRRR
+R AAA_ R @**@ RRRR
+R AAB_ R @*** RRRR
+R ABA_ R @*** RRRR
+R ABB_ R _*** RRRR
+R BAA_ R _*** RRRR
+R BAB_ R @*** RRRR
+R BBA_ R @*** RRRR
+R BBB_ R @**@ RRRR
+
+L _A_* STOP *_** SSSS
+L _B_* STOP *_** SSSS
+
+L _AA* LR *@** DDDD
+L _AB* LR *_** DDDD
+L _BA* LR *_** DDDD
+L _BB* LR *@** DDDD
+L @AA* LR *@** DDDD
+L @AB* LR *_** DDDD
+L @BA* LR *_** DDDD
+L @BB* LR *@** DDDD
+
+LR _!** R **** SSLS
+
+L !__* L **** LLLL
+L AA__ L *@** LLLL
+L AB__ L *_** LLLL
+L BA__ L *_** LLLL
+L BB__ L *@** LLLL
+L AAA_ L *@*@ LLLL
+L AAB_ L *@** LLLL
+L BAA_ L *@** LLLL
+L BAB_ L *_** LLLL
+L ABA_ L *_** LLLL
+L ABB_ L *@** LLLL
+L BBA_ L *@** LLLL
+L BBB_ L *@*@ LLLL

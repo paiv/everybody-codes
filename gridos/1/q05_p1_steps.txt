@@ -1,0 +1,23 @@
+HEADS AADBBC
+START ...... II ****** SDSSDS
+II ...... TT +**+++ RRRLLL
+TT ...... BB ++++++ RRRLLL
+TT .@.... TB +**+++ RRRLLL
+TT ....@. BT ++++** RRRLLL
+TT .@..@. TT +**+** RRRLLL
+TT +**+** STOP ****** SSSSSS
+TB ...... BT ++++++ RRRLLL
+TB .@.... TT +**+++ RRRLLL
+TB ....@. BB +++**+ RRRLLL
+TB .@..@. TB +****+ RRRLLL
+TB +****+ STOP ****** SSSSSS
+BT ...... TB ++++++ RRRLLL
+BT .@.... BB **++++ RRRLLL
+BT ....@. TT ++++** RRRLLL
+BT .@..@. BT **++** RRRLLL
+BT **++** STOP ****** SSSSSS
+BB ...... TT ++++++ RRRLLL
+BB .@.... BT **++++ RRRLLL
+BB ....@. TB +++**+ RRRLLL
+BB .@..@. BB **+**+ RRRLLL
+BB **+**+ STOP ****** SSSSSS

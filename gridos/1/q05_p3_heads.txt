@@ -1,0 +1,62 @@
+HEADS A
+START . TR + R
+
+TR . TQ + D
+TQ . RB + D
+TQ @ RT * U
+RT . TR + R
+RT + TR * R
+
+BR . BQ + U
+BQ . RT + U
+BQ @ RB * D
+RB . BR + R
+RB + BR * R
+
+BR _ ER * L
+ER + EQ * L
+
+ER . EQ + L
+EQ . RS + L
+EQ @ RE * R
+RE . ER + D
+RE + ER * D
+
+SR . SQ + R
+SQ . RE + R
+SQ @ RS * L
+RS . SR + D
+RS + SR * D
+
+SR _ AL * U
+AL + AQ * U
+
+AL . AQ + U
+AQ . LX + U
+AQ @ LA * D
+LA . AL + L
+LA + AL * L
+
+XL . XQ + D
+XQ . LA + D
+XQ @ LX * U
+LX . XL + L
+LX + XL * L
+
+XL _ DL * R
+DL + DQ * R
+
+DL . DQ + R
+DQ . LV + R
+DQ @ LD * L
+LD . DL + U
+LD + DL * U
+
+VL . VQ + L
+VL + VQ * L
+VQ . LD + L
+VQ @ LV * R
+LV . VL + U
+LV + VL * U
+
+DQ + STOP * S

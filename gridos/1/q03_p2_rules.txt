@@ -1,0 +1,14 @@
+HEADS AAAAAAA
+
+START ####### S1 ******* LLSRRDD
+S1 __#____ STOP ******* SSSSSSS
+S1 __#!!__ M ******* LSSSRDS
+
+M **=#___ STOP **~**** RRRRRRR
+M **#____ STOP ******* RRRRRRR
+M **#!*__ M ******* RRRRRRR
+M *#=!!__ M **~**** RRRRRRR
+M *~=#!__ M **~**** RRRRRRR
+M #~==!__ M **~***~ RRRRRRR
+M ~~==#__ M **~***~ RRRRRRR
+M ~~===__ M **~**~~ RRRRRRR

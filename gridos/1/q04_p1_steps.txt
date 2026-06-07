@@ -1,0 +1,24 @@
+HEADS AAABBB
+
+START ###### S _**_** DRRURR
+
+S #==#== == _#*_#* DDRUUR
+S #==#|| =| _#*_#* DDRUUR
+S #||#== |= _#*_#* DDRUUR
+S #||#|| || _#*_#* DDRUUR
+
+== #=*#=* == _#*_#* DDDUUU
+== #=*#|* =| _#*_#* DDDUUU
+== #|*#=* |= _#*_#* DDDUUU
+=| #=*#=* == _#*_#| DDDUUU
+|= #=*#=* == _#|_#* DDDUUU
+|| #=*#=* == _#|_#| DDDUUU
+
+== _=*_=* STOP *#**#* SSSSSS
+== _|*_=* TE   *#**#* DDDUUU
+== _|=_|= TT   *#**#* DDDUUU
+=| _=*_=_ STOP *#**#| SSSSSS
+|= _=__== STOP *#|*#* SSSSSS
+
+TT _#__#_ STOP **|**| SSSSSS
+TE _#__#* STOP **|*** SSSSSS

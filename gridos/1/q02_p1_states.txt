@@ -1,0 +1,9 @@
+HEADS AA
+
+START ** M ** SR
+
+M *_ STOP _* SS
+M AA M @* RR
+M BB M @* RR
+M AB M _* RR
+M BA M _* RR

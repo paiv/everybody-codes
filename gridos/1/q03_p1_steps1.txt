@@ -1,0 +1,39 @@
+HEADS AAAABBBB
+
+START ######## MM ******** LSRDDLSR
+
+MM *#____#* STOP ******** SSSSSSSS
+MM *~**_*=* STOP ******~* SSSSSSSS
+MM *=*_**~* STOP *~****** SSSSSSSS
+MM *~****#* STOP ******** SSSSSSSS
+MM *#****~* STOP ******** SSSSSSSS
+MM *~****~* STOP ******** SSSSSSSS
+MM *#~__##* STOP ******** SSSSSSSS
+MM *##__~#* STOP ******** SSSSSSSS
+MM *#~__~#* STOP ******** SSSSSSSS
+MM #=~__#=* STOP *~****~* SSSSSSSS
+MM *=#__~=# STOP *~****~* SSSSSSSS
+MM ~=~__~=~ STOP *~*~~*~* SSSSSSSS
+
+MM *##__##* MM ******** RRRRLLLL
+MM *##__=#* MM ******** RRRRLLLL
+MM *#=__##* MM ******** RRRRLLLL
+MM *#=__=#* MM ******** RRRRLLLL
+MM #=!__*#* MM *~****** RRRRLLLL
+MM ~=#__!#* MM *~****** RRRRLLLL
+MM *#*__#=* MM ******~* RRRRLLLL
+MM *#*__==# MM ******~* RRRRLLLL
+MM #=#__#=# MM *~****~* RRRRLLLL
+MM *=#__==# MM *~****~* RRRRLLLL
+MM #==__#=* MM *~****~* RRRRLLLL
+MM #==__==# MM *~****~* RRRRLLLL
+MM #=#__#=~ MM *~****~* RRRRLLLL
+MM ~=#__#=# MM *~****~* RRRRLLLL
+MM ~=#__#=~ MM *~****~* RRRRLLLL
+MM *#*__==~ MM ****~*~* RRRRLLLL
+MM *=#__==~ MM *~**~*~* RRRRLLLL
+MM #==__==~ MM *~**~*~* RRRRLLLL
+MM ~==__!#* MM *~*~**** RRRRLLLL
+MM ~==__#=* MM *~*~**~* RRRRLLLL
+MM ~==__==# MM *~*~**~* RRRRLLLL
+MM ~==__==~ MM *~*~~*~* RRRRLLLL

@@ -1,0 +1,58 @@
+HEADS A
+
+START # TB * D
+
+TB _ TF # U
+TQ _ TU # U
+TT _ TP = U
+
+TF # TA * R
+TA # TB * D
+TA = TQ = D
+TA _ RL * D
+
+TU = TV ~ R
+TV # TB * D
+TV = TT = D
+
+TP = TW ~ R
+TW # C4 * D
+TW = TT = D
+
+C4 _ C3 # L
+C3 = C2 # U
+C2 ~ C1 * R
+C1 # TA * R
+
+B _ F # U
+Q _ U # U
+T _ P = U
+
+F # A _ R
+A # B * D
+A = Q = D
+A _ RL * D
+
+U = V ~ R
+V # B * D
+V = T = D
+
+P = W ~ R
+W # E4 * D
+W = T = D
+
+E4 _ E3 # L
+E3 = E2 # U
+E2 ~ E1 * R
+E1 # A  _ R
+
+RL _ S0 * L
+S0 # S0 * L
+S0 = S1 * L
+S0 _ EE * R
+S1 # S1 * L
+S1 = S1 * L
+S1 _ A * R
+
+EE # EE _ R
+EE _ STOP * S

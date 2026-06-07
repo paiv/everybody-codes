@@ -1,0 +1,22 @@
+HEADS AAAAA
+
+START ##### R ***** LUSDR
+
+R **#*# R ***** RRRRR
+R **#*= R ***** RRRRR
+R **#*_ STOP ***** SSSSS
+
+R #*=*# R **~** RRRRR
+R #*=*= R **~** RRRRR
+R ~*=*# R **~** RRRRR
+
+R ~*=*= D **~** DDDDD
+R ~*~~= R ***** RRRRR
+R ~*~~~ R ***** RRRRR
+R ~~~__ R ***** UUUUU
+
+D _~___ R **~** UUUUU
+D ~~___ B **~** LLLLL
+
+B _~~_~ R ***** UUUUU
+B ~~~_~ D ***** DDDDD

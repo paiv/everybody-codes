@@ -1,0 +1,17 @@
+HEADS A
+
+START # START * R
+START = V ~ R
+START _ STOP * S
+
+V # START * R
+V = D = D
+D _ F ~ U
+F = W ~ R
+
+W # C4 * L
+W = D = D
+
+C4 ~ C3 * D
+C3 ~ C2 _ U
+C2 ~ START * R

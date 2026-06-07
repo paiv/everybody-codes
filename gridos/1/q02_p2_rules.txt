@@ -1,0 +1,20 @@
+HEADS AA
+
+START ** R ** LS
+
+R __ STOP ** SS
+L __ STOP ** SS
+
+R !_ L _* DD
+R _! R ** RR
+R AA R @* RR
+R BB R @* RR
+R AB R _* RR
+R BA R _* RR
+
+L _! R *_ DD
+L !_ L ** LL
+L AA L *@ LL
+L BB L *@ LL
+L AB L *_ LL
+L BA L *_ LL

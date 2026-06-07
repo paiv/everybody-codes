@@ -1,0 +1,28 @@
+HEADS A
+
+START A RA _ R
+START B RB _ R
+
+RA _ RD * D
+RB _ RD * D
+RA A RA @ R
+RA B RB _ R
+RB A RA _ R
+RB B RB @ R
+
+RD _ RL * L
+RL _ STOP * S
+RL A LA _ L
+RL B LB _ L
+
+LA _ LD * D
+LB _ LD * D
+LA A LA @ L
+LA B LB _ L
+LB A LA _ L
+LB B LB @ L
+
+LD _ LR * R
+LR _ STOP * S
+LR A RA _ R
+LR B RB _ R

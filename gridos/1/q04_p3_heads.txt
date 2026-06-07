@@ -1,0 +1,66 @@
+HEADS A
+
+START # AD * R
+
+AD _ TA * R
+TA _ AU * U
+AD = AD * D
+AD | MU * R
+AU = AU * U
+AU | MD * R
+AU _ TB * R
+TB _ AD * D
+
+MU _ QU = U
+MU = QU = U
+QU = QR * D
+QU | RB * D
+QU _ MD * D
+QR = MU * R
+MD _ QD = D
+MD = QD = D
+QD = Qr * U
+QD | RB * U
+QD _ MU * U
+Qr = MD * R
+RB = BB | L
+BB = BB * L
+BB | SD * D
+
+FF = FF * U
+FF | FF * U
+FF _ SD * D
+
+SD _ TU * R
+TU _ SU * U
+SD = SD * D
+SD | DX * D
+SU = SU * U
+SU | DX * D
+SU _ TD * R
+TD _ SD * D
+
+DX = DX | D
+DX | DX * D
+DX _ UX * U
+UX | UX * U
+UX = UX | U
+UX _ EE * D
+
+EE | EF * R
+EF _ ET * L
+EF = EF _ R
+EF | ET _ L
+ET _ ET * L
+ET | EE * D
+EE _ RR * U
+
+RR | QL * L
+QL = QL * L
+QL # OK * R
+QL | DD * R
+OK = OK * R
+OK | RR * U
+
+DD = DD _ R
+DD | STOP _ S
