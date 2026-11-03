@@ -1,5 +1,6 @@
 #!/usr/bin/env julia
 
+
 function parserow(text)
     [m[1] for m in eachmatch(r"(\w+)", text)]
 end
@@ -7,6 +8,19 @@ end
 
 function parsenotes(text)
     Dict(k=>vs for (k,vs...) in parserow.(split(text)))
+end
+
+
+function Base.reverse(d::Dict)
+    t = Dict{keytype(d),valtype(d)}()
+    for (k,vs) in d
+        for v in vs
+            l = get(t, v, valtype(d)())
+            push!(l, k)
+            t[v] = l
+        end
+    end
+    return t
 end
 
 
@@ -32,21 +46,21 @@ end
 
 
 function part2(data)
-    notes = parsenotes(data)
-    sum(keys(notes)) do k
-        k == "NULL" ? 0 : "NULL" ∈ walk(notes, k)
-    end
+    notes = parsenotes(data) |> reverse
+    s = walk(notes, "NULL")
+    length(s) - 1
 end
 
 
 function part3(data)
-    notes = parsenotes(data)
-    sum(keys(notes)) do k
-        s = unique(chopprefix(w, "NULL")
-            for w in walk(notes, k)
-            if startswith(w, "NULL"))
-        return length(s) > 1
+    notes = parsenotes(data) |> reverse
+    ks = [k for k in keys(notes) if startswith(k, "NULL")]
+    ns = walk.(Ref(notes), ks)
+    cs = reduce(ns, init=Dict{String,Int}()) do acc, vs
+        mergewith!(+, acc, Dict(v=>1 for v in vs))
+        return acc
     end
+    sum(v > 1 for v in values(cs))
 end
 
 
